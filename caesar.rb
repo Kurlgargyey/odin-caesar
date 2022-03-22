@@ -7,7 +7,7 @@ def caesar (string, left_shift=10)
   ciphered_string = ""
 # Make sure the string is UTF-8 encoded
   string = string.encode("UTF-8", undef: :replace, invalid: :replace, replace: "")
-# Iterate through string character needs to be ciphered and cipher it if so
+# Iterate through string to find and cipher all ciphered characters
   string.each_char do |char|
     if char.ord.between?(97, 122)
       ciphered_string += downcase_letters[(char.ord-97)]
