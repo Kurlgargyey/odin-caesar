@@ -1,6 +1,7 @@
 def caesar (string, left_shift)
   upcase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").rotate!(left_shift)
   downcase_letters = "abcdefghijklmnopqrstuvwxyz".split("").rotate!(left_shift)
+  numerals = "1234567890".split("").rotate!(left_shift)
   ciphered_string = ""
   string.each_char do |char|
     if char.ord >= 97 && char.ord <= 122
@@ -14,8 +15,5 @@ def caesar (string, left_shift)
   ciphered_string
 end
 
-
-
-#p caesar("Hello world", 10)
-
-p downcase_letters = "abcdefghijklmnopqrstuvwxyz".split("").rotate!(-3)
+p caesar("Hello world", 10)
+p caesar("Alphabet array shifting tech! Woohoo!!!", -3)
