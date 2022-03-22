@@ -16,8 +16,3 @@ def caesar (string, left_shift=10)
   end
   ciphered_string
 end
-
-p caesar("Hello world 200", 10)
-p caesar("Alphabet array shifting tech! Woohoo!!! 100", -3)
-p caesar("There are 5000 Zombies at our gates, but we have a 100ft high wall to fend them off.", 15)
-p caesar("Hello world", 26)
