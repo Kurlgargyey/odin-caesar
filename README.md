@@ -1,2 +1,2 @@
-# odin-caesar
-Simple caesar cipher implementation for The Odin Project
+# odin-ruby-caesar
+Simple caesar cipher implementation in Ruby for The Odin Project
