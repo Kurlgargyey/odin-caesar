@@ -1,8 +1,8 @@
 def caesar (string, left_shift=10)
 # Generate our "ciphers"
-  upcase_letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").rotate!(left_shift)
-  downcase_letters = "abcdefghijklmnopqrstuvwxyz".split("").rotate!(left_shift)
-  numerals = "0123456789".split("").rotate!(left_shift)
+  upcase_letters = ("A".."Z").to_a.rotate!(left_shift)
+  downcase_letters = ("a".."z").to_a.rotate!(left_shift)
+  numerals = ("0".."9").to_a.rotate!(left_shift)
 # Initialize a string to return
   ciphered_string = ""
   string.each_char do |char|
@@ -20,3 +20,5 @@ def caesar (string, left_shift=10)
   end
   ciphered_string
 end
+
+p caesar ("Hello World")
