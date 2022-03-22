@@ -5,8 +5,10 @@ def caesar (string, left_shift=10)
   numerals = ("0".."9").to_a.rotate!(left_shift)
 # Initialize a string to return
   ciphered_string = ""
+# Make sure the string is UTF-8 encoded
+  string = string.encode("UTF-8", undef: :replace, invalid: :replace, replace: "")
+# Iterate through string character needs to be ciphered and cipher it if so
   string.each_char do |char|
-# Check for whether the current character needs to be ciphered and cipher it if so
     if char.ord.between?(97, 122)
       ciphered_string += downcase_letters[(char.ord-97)]
     elsif char.ord.between?(65, 90)
