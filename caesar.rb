@@ -10,16 +10,12 @@ def generate_ciphers(shift)
 end
 
 def cipher_char(char, ciphers)
-  if char.ord.between?(97, 122)
-    ciphers[:downcase_cipher][(char.ord - 97)]
-  elsif char.ord.between?(65, 90)
-    ciphers[:upcase_cipher][(char.ord - 65)]
-  elsif char.ord.between?(48, 57)
-    ciphers[:numeral_cipher][(char.ord - 48)]
-  else
-    # Keep non-ciphered characters (whitespace, punctuation, etc)
-    char
-  end
+  return ciphers[:downcase_cipher][(char.ord - 97)] if char.ord.between?(97, 122)
+  return ciphers[:upcase_cipher][(char.ord - 65)] if char.ord.between?(65, 90)
+  return ciphers[:numeral_cipher][(char.ord - 48)] if char.ord.between?(48, 57)
+
+  # Keep non-ciphered characters (whitespace, punctuation, etc)
+  char
 end
 
 def caesar(string, shift = 7)
@@ -34,10 +30,3 @@ def caesar(string, shift = 7)
   end
   ciphered_string
 end
-
-# puts 'Enter the string to be ciphered:'
-# string = gets.chomp
-# puts 'Enter the desired left shift (enter a negative integer for a right shift):'
-#  left_shift = gets.chomp.to_i
-
-# puts caesar(string, left_shift)
