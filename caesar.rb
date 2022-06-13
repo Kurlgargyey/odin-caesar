@@ -22,12 +22,12 @@ def cipher_char(char, ciphers)
   end
 end
 
-def caesar(string, shift)
+def caesar(string, shift = 7)
   ciphers = generate_ciphers(shift)
   # Initialize a string to return
   ciphered_string = +''
   # Make sure the string is UTF-8 encoded
-  string = string.encode('UTF-8', undef: :replace, invalid: :replace, replace: '')
+  string = string.to_s.encode('UTF-8', undef: :replace, invalid: :replace, replace: '')
   # Iterate through string to find and cipher all ciphered characters
   string.each_char do |char|
     ciphered_string += cipher_char(char, ciphers)
@@ -35,9 +35,9 @@ def caesar(string, shift)
   ciphered_string
 end
 
-puts 'Enter the string to be ciphered:'
-string = gets.chomp
-puts 'Enter the desired left shift (enter a negative integer for a right shift):'
-left_shift = gets.chomp.to_i
+# puts 'Enter the string to be ciphered:'
+# string = gets.chomp
+# puts 'Enter the desired left shift (enter a negative integer for a right shift):'
+#  left_shift = gets.chomp.to_i
 
-puts caesar(string, left_shift)
+# puts caesar(string, left_shift)
